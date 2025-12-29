@@ -1,17 +1,103 @@
-# React + Vite
+# To-Do App – Programowanie Funkcyjne
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Opis projektu
 
-Currently, two official plugins are available:
+Projekt przedstawia prostą aplikację typu To-Do, stworzoną w bibliotece React z wykorzystaniem podejścia charakterystycznego dla programowania funkcyjnego. Aplikacja umożliwia dodawanie zadań, oznaczanie ich jako wykonane oraz usuwanie ich z listy.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Celem projektu było:
+- zastosowanie funkcyjnych komponentów React,
+- oddzielenie logiki aplikacji od warstwy prezentacji,
+- wykorzystanie niemutowalnych struktur danych,
+- uruchomienie aplikacji w środowisku kontenerowym Docker.
 
-## React Compiler
+Projekt został zrealizowany w sposób umożliwiający łatwą analizę kodu oraz prostą obronę ustną.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Zastosowane technologie
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# To_Do_Lista_Programowanie_Funkcyjne" 
+- JavaScript (ES6+)
+- React (funkcyjne komponenty)
+- Vite
+- HTML / CSS
+- Docker
+- nginx
+
+---
+
+## Programowanie funkcyjne w projekcie
+
+W projekcie zastosowano podstawowe założenia programowania funkcyjnego:
+
+- **Czyste funkcje**  
+  Logika aplikacji (dodawanie, usuwanie i zmiana statusu zadań) została zaimplementowana jako funkcje, które:
+  - przyjmują dane wejściowe,
+  - nie modyfikują ich bezpośrednio,
+  - zwracają nowe dane jako wynik.
+
+- **Niemutowalność danych**  
+  Stan aplikacji nie jest modyfikowany bezpośrednio. Do pracy na danych użyto metod takich jak:
+  - `map`
+  - `filter`
+  - operator rozproszenia (`...`)
+
+- **Separacja logiki i widoku**  
+  Logika aplikacji została oddzielona od komponentów React. Komponenty odpowiadają wyłącznie za:
+  - obsługę zdarzeń,
+  - aktualizację stanu,
+  - renderowanie interfejsu użytkownika.
+
+Takie podejście zwiększa czytelność kodu oraz ułatwia jego testowanie i rozwój.
+
+---
+
+## Funkcjonalności aplikacji
+
+- dodawanie nowych zadań do listy,
+- oznaczanie zadań jako wykonane lub niewykonane,
+- usuwanie zadań,
+- dynamiczne renderowanie listy zadań,
+- czytelny, estetyczny interfejs użytkownika.
+
+---
+
+## Wygląd aplikacji
+
+<img width="1435" height="556" alt="image" src="https://github.com/user-attachments/assets/6cd60f6b-e612-40e6-8630-0d3a1a722b7a" />
+
+
+
+
+---
+
+## Uruchomienie projektu lokalnie (Docker)
+
+### Wymagania
+- zainstalowany Docker Desktop
+
+### Kroki uruchomienia
+
+1. Sklonuj repozytorium:
+```bash
+   git clone https://github.com/AleksandraRokita/To_Do_Lista_Programowanie_Funkcyjne.git
+```
+
+2. Przejdź do katalogu projektu:
+```bash
+   cd To_Do_Lista_Programowanie_Funkcyjne
+```
+
+3. Zbuduj obraz Dockera:
+```bash
+   docker build -t todo-react-app .
+```
+
+4. Uruchom kontener:
+```bash
+   docker run -p 8080:80 todo-react-app
+```
+
+5. Otwórz w przeglądarce:
+```bash
+   http://localhost:8080
+```
