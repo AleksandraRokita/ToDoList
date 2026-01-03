@@ -42,12 +42,8 @@ W projekcie zastosowano podstawowe założenia programowania funkcyjnego:
   - operator rozproszenia (`...`)
 
 - **Separacja logiki i widoku**  
-  Logika aplikacji została oddzielona od komponentów React. Komponenty odpowiadają wyłącznie za:
-  - obsługę zdarzeń,
-  - aktualizację stanu,
-  - renderowanie interfejsu użytkownika.
+Logika aplikacji (dodawanie, usuwanie i zmiana statusu zadań) została zaimplementowana z wykorzystaniem czystej funkcji typu reducer, która na podstawie aktualnego stanu i akcji oblicza nowy stan aplikacji. Reducer został użyty w custom hooku, co pozwala na pełną separację logiki od warstwy widoku.
 
-Takie podejście zwiększa czytelność kodu oraz ułatwia jego testowanie i rozwój.
 
 ---
 
