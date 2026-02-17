@@ -75,12 +75,12 @@ Logika aplikacji (dodawanie, usuwanie i zmiana statusu zadań) została zaimplem
 
 1. Sklonuj repozytorium:
 ```bash
-   git clone https://github.com/AleksandraRokita/To_Do_Lista_Programowanie_Funkcyjne.git
+   git clone https://github.com/AleksandraRokita/To_Do_List.git
 ```
 
 2. Przejdź do katalogu projektu:
 ```bash
-   cd To_Do_Lista_Programowanie_Funkcyjne
+   cd To_Do_List
 ```
 
 3. Zbuduj obraz Dockera:
